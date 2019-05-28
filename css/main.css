@@ -1,0 +1,65 @@
+
+body{
+    background-image: url('../img/pexels-photo-590493.jpeg');
+    background-size: inherit ;
+    background-position: center;
+    margin: 0;
+    padding: 0;
+}
+
+.dropdown button{
+    font-weight: bold;
+    font-size: 18px;
+
+}
+.dropdown{
+    position: relative;
+    top: 50px;
+    left: 400px;
+    margin-bottom: 0.3em;
+}
+
+.dropdown-menu{
+    opacity: 1;
+    background-color: rgb(223, 222, 222);
+}
+
+.books-container{
+    width: 100%;
+}
+
+.table{
+    position: relative;
+    top: 50px;
+    left: 400px;
+    max-width: 700px;
+    opacity: 0.9;
+}
+
+.table:hover{
+    opacity: 1;
+    transition: 0.7s;
+}
+
+tr{
+    margin-bottom: 0.3em;
+}
+
+
+.btn-small{
+    color: aliceblue;
+}
+
+.btn-small:hover{
+    color: aliceblue;
+    font-weight: bold;
+}
+
+img{
+    height: 112px;
+    width: 112px;
+}
+
+/* .new-name-input-msg{
+    border: red solid;
+} */

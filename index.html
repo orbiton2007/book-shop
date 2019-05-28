@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Book Shop</title>
+    <link rel="stylesheet" href="lib/bootstrap/bootstrap.css" />
+    <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+    <!-- sort -->
+    <div class="dropdown">
+        <button class="btn btn-inverse dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown"
+            onclick="onDropdown()" aria-haspopup="true" aria-expanded="false">
+            Sort
+        </button>
+        <span><button class="btn btn-inverse" onclick="onReadAndAddNewBook()">Add Book</button></span>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
+            <button class="dropdown-item" type="button" onclick="onSortByName()">Name</button>
+            <button class="dropdown-item" type="button" onclick="onSortByPrice()">Price</button>
+        </div>
+    </div>
+
+
+    <!-- list books -->
+    <div class="books-container">
+        <div class="book">
+            <table class="table table-striped table-dark">
+                <thead>
+                    <tr>
+                        <th scope="col"></th>
+                        <th scope="col">Picture</th>
+                        <th scope="col">Title</th>
+                        <th scope="col">Price</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                </tbody>
+            </table>
+        </div>
+
+        <!-- modal -->
+    </div>
+    <div class="modal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Modal title</h5>
+                    <button type="button" class="close" onclick="onCloseModal()" data-dismiss="modal"
+                        aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>Modal body text goes here.</p>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" onclick="onCloseModal()"
+                        data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="lib/jquery/jquery.js"></script>
+    <script src="js/book-controller.js"></script>
+    <script src="js/book-service.js"></script>
+    <script src="js/util-service.js"></script>
+</body>
+
+</html>
