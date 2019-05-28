@@ -1,6 +1,5 @@
 'use strict'
 
-
 $(document).ready(onInit);
 
 function onInit() {
@@ -39,10 +38,7 @@ function onReadAndAddNewBook() {
     <span class="new-name-input-msg"></span></p>
     <p><input type="text" class="new-price-input" placeholder="Enter price"></p>`);
     $modal.find('.btn-primary').show();
-    $modal.find('.btn-primary').click(function () {
-        onAddBook();
-        onCloseModal();
-    });
+    document.querySelector('.modal-footer .btn-primary').onclick = function () { onAddBook() };
     $modal.show()
 }
 
@@ -52,7 +48,7 @@ function onReadAndUpdateBook(bookId) {
     $modal.find('.modal-header h5').text('Updat Book')
     $modal.find('.modal-body').html(`<p><input type="text" class="price-input" placeholder="Enter price"></p>`);
     $modal.find('.btn-primary').show();
-    $modal.find('.btn-primary').click(function () { onUpdatePrice(`${bookId}`); onCloseModal(); });
+    document.querySelector('.modal-footer .btn-primary').onclick = function () { onUpdatePrice(`${bookId}`) };
     $modal.show()
 }
 
@@ -87,6 +83,7 @@ function onAddBook() {
     var price = $('.new-price-input').val();
     addBook(name, price);
     renderBooks();
+    onCloseModal();
 }
 
 
@@ -94,7 +91,7 @@ function onUpdatePrice(bookId) {
     var bookPrice = $('.price-input').val();
     updateBookPrice(bookId, bookPrice);
     renderBooks();
-
+    onCloseModal();
 }
 
 function onSetRate(bookId, rate) {

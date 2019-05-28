@@ -18,7 +18,7 @@ function getRandomIntInclusive(min, max) {
 }
 
 
-function getBookById(bookId){
+function getBookById(bookId) {
     return gBooks.find(function (book) {
         return (book.id === bookId);
     });

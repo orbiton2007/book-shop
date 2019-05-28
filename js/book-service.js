@@ -4,11 +4,11 @@ var gBooks;
 
 function createBooks() {
     var books = loadFromStorage('books');
-    if(!books || !books.length){
-    var books = [
-        createBook(makeId(), 'bobo', 50, 'notebook'),
-        createBook(makeId(), 'momo', 60, 'notebook2'),
-        createBook(makeId(), 'koko', 70, 'notebook3')];
+    if (!books || !books.length) {
+        var books = [
+            createBook(makeId(), 'bobo', 50, 'notebook'),
+            createBook(makeId(), 'momo', 60, 'notebook2'),
+            createBook(makeId(), 'koko', 70, 'notebook3')];
     }
     gBooks = books;
     saveToStorage('books', gBooks);
@@ -46,7 +46,7 @@ function addBook(name, price) {
     saveToStorage('books', gBooks);
 }
 
-function updateBookRate(bookId, rate){
+function updateBookRate(bookId, rate) {
     var book = getBookById(bookId);
     book.rate = +rate;
     saveToStorage('books', gBooks);
