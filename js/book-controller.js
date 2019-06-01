@@ -73,6 +73,10 @@ function onCheckName(name) {
             $('.btn-primary').hide();
             $('.new-name-input-msg').show();
             $('.new-name-input-msg').text('Name already exists');
+        }else{
+            $('.btn-primary').show();
+            $('.new-name-input-msg').hide();
+
         }
     });
 }
@@ -100,18 +104,33 @@ function onSetRate(bookId, rate) {
 
 
 function onDropdown() {
-    $('.dropdown-menu').show();
+    $('.second-dropdown-menu').show();
 }
 
 function onSortByName() {
-    $('.dropdown-menu').hide();
+    $('.second-dropdown-menu').hide();
     sortByName();
     renderBooks();
 }
 
 
 function onSortByPrice() {
-    $('.dropdown-menu').hide();
+    $('.second-dropdown-menu').hide();
     sortByPrice();
     renderBooks();
+}
+
+function onOpenLang(){
+    $('.first-dropdown-menu').show();
+}
+
+function onSetLang(choice){
+    gCurrLang = 'en';
+    var lang = choice.text;
+    if(gCurrLang === lang.toLowerCase()) doTrans();
+    else {
+        gCurrLang = 'he';
+        doTrans();
+    }
+    $('.first-dropdown-menu').hide();
 }

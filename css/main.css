@@ -1,38 +1,35 @@
 
 body{
     background-image: url('../img/pexels-photo-590493.jpeg');
-    background-size: inherit ;
-    background-position: center;
-    margin: 0;
-    padding: 0;
+    background-size: cover;
+    background-position: inherit;
 }
 
-.dropdown button{
-    font-weight: bold;
-    font-size: 18px;
 
-}
-.dropdown{
-    position: relative;
-    top: 50px;
-    left: 400px;
-    margin-bottom: 0.3em;
+.header{
+    position:absolute; 
+    left: 43%;   
+    color: white;
+    font-family: 'Times New Roman', Times, serif
 }
 
+.dropdown-and-button-container{
+    position: absolute;
+    left: 135px;
+    top:9px;
+    max-width: max-content;
+}
 .dropdown-menu{
-    opacity: 1;
     background-color: rgb(223, 222, 222);
 }
 
 .books-container{
-    width: 100%;
+    margin: 10% auto;
+    max-width: 700px;
+    max-height: 700px;
 }
 
 .table{
-    position: relative;
-    top: 50px;
-    left: 400px;
-    max-width: 700px;
     opacity: 0.9;
 }
 

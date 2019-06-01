@@ -9,39 +9,60 @@
 </head>
 
 <body>
-    <!-- sort -->
-    <div class="dropdown">
-        <button class="btn btn-inverse dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown"
-            onclick="onDropdown()" aria-haspopup="true" aria-expanded="false">
-            Sort
-        </button>
-        <span><button class="btn btn-inverse" onclick="onReadAndAddNewBook()">Add Book</button></span>
-        <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-            <button class="dropdown-item" type="button" onclick="onSortByName()">Name</button>
-            <button class="dropdown-item" type="button" onclick="onSortByPrice()">Price</button>
+    <nav class="navbar navbar-dark bg-dark">
+        <div class="btn-group">
+            <button type="button" class="btn btn-primary dropdown-toggle" onclick="onOpenLang()" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                Language
+            </button>
+            <div class="dropdown-menu first-dropdown-menu">
+                <a class="dropdown-item first-dropdown-item" onclick="onSetLang(this)" href="#">En</a>
+                <!-- <div class="dropdown-divider"></div> -->
+                <a class="dropdown-item first-dropdown-item" onclick="onSetLang(this)" href="#">He</a>
+            </div>
         </div>
-    </div>
+        <h2 class="header" data-trans="title">Books Shop</h2>
+
+        <!-- sort -->
+        <div class="dropdown-container">
+            <div class="dropdown-and-button-container">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu2"
+                    data-toggle="dropdown" onclick="onDropdown()" aria-haspopup="true" aria-expanded="false"
+                    data-trans="sort">Sort
+                </button>
+                <div class="dropdown-menu second-dropdown-menu" aria-labelledby="dropdownMenu2">
+                    <!-- <a class="dropdown-item second-dropdown-item" href="#" onclick="onSortByName()">Name</a>
+                    <a class="dropdown-item second-dropdown-item" href="#" onclick="onSortByPrice()">Price</a> -->
+                    <button class="dropdown-item second-dropdown-item" type="button" onclick="onSortByName()"
+                        data-trans="name">Name</button>
+                    <button class="dropdown-item second-dropdown-item" type="button" onclick="onSortByPrice()"
+                        data-trans="price">Price</button>
+                </div>
+                <span><button class="btn btn-secondary" onclick="onReadAndAddNewBook()" data-trans="add book">Add
+                        Book</button></span>
+            </div>
+        </div>
+    </nav>
 
 
     <!-- list books -->
     <div class="books-container">
-        <div class="book">
-            <table class="table table-striped table-dark">
-                <thead>
-                    <tr>
-                        <th scope="col"></th>
-                        <th scope="col">Picture</th>
-                        <th scope="col">Title</th>
-                        <th scope="col">Price</th>
-                    </tr>
-                </thead>
-                <tbody>
+        <table class="table table-striped table-dark">
+            <thead>
+                <tr>
+                    <th scope="col"></th>
+                    <th scope="col" data-trans="picture">Picture</th>
+                    <th scope="col" data-trans="title-header-table">Title</th>
+                    <th scope="col" data-trans="price">Price</th>
+                </tr>
+            </thead>
+            <tbody>
 
-                </tbody>
-            </table>
-        </div>
+            </tbody>
+        </table>
+    </div>
 
-        <!-- modal -->
+    <!-- modal -->
     </div>
     <div class="modal" tabindex="-1" role="dialog">
         <div class="modal-dialog" role="document">
@@ -58,9 +79,9 @@
 
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" onclick="onCloseModal()"
-                        data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
+                    <button type="button" class="btn btn-secondary" onclick="onCloseModal()" data-dismiss="modal"
+                        data-trans="close">Close</button>
+                    <button type="button" class="btn btn-primary" data-trans="Save changes">Save changes</button>
                 </div>
             </div>
         </div>
@@ -71,6 +92,7 @@
     <script src="js/book-controller.js"></script>
     <script src="js/book-service.js"></script>
     <script src="js/util-service.js"></script>
+    <script src="js/i18n.js"></script>
 </body>
 
 </html>
